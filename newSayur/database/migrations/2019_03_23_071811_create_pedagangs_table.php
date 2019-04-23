@@ -21,10 +21,10 @@ class CreatePedagangsTable extends Migration
             $table->string('nama_belakang',30);
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('nomor_telepon',13);
-            $table->string('foto_profil');
-            $table->string('foto_ktp');
-            $table->string('alamat');
-            $table->string('deskripsi',100);
+            $table->string('foto_profil',255);
+            $table->string('foto_ktp',255);
+            $table->string('alamat',100);
+            $table->longtext('deskripsi');
             $table->string('lat');
             $table->string('lon');
             $table->string('status',10);
