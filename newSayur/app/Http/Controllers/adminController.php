@@ -80,11 +80,46 @@ class adminController extends Controller
         
         return redirect('admin/user');
     }
-    public function hapus($id){
+    public function hapus($id)
+    {
         $user = user::where('id',$id);
         $user->delete();
 
         return redirect('admin/user');
     }
+    public function pageArtikel()
+    {
+        return view('admin/artikel');
+    }
+    public function insertArtikel(request $request)
+    {
+            $this->validate($request, [
     
+                'thumbnail.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'judul' => 'required',
+                'deskripsi' => 'required',
+                'penulis' => 'required',
+                
+            ]);
+
+            $insert = new Artikel;
+            $insert->user_id = Auth()->user()->id;
+            if($request->hasfile('thumbnail')){
+
+                $thumbnail = $request->thumbnail;
+                $filename = time() . '.' . $thumbnail->getClientOriginalExtension();
+                request()->thumbnail->move(public_path('fotoThumbnail'), $filename);
+                $insert->thumbnail = $filename;
+            }else{
+                $insert->thumbnail = 'Tidak Ada';
+            }
+            $insert->judul = $request->judul;
+            $insert->deskripsi = $request->deskripsi;
+            $insert->penulis = $request->penulis;
+            $insert->date = insertArtikel::now()->format('l, d F Y H:i');
+            $insert->save();
+
+            return redirect('/admin/artikel')->with('success','Artikel Terkirim');
+    }
 }
+

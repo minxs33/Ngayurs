@@ -111,6 +111,11 @@
             <i class="fa fa-envelope-o"></i> <span>Laporan</span>
     </a>
   </li>
+  <li>
+    <a href="{{url('admin/artikel')}}">
+            <i class="fa fa-envelope-o"></i> <span>Artikel</span>
+    </a>
+  </li>
   </ul>
     </section>  
     <!-- /.sidebar -->

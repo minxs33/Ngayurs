@@ -19,7 +19,8 @@ class CreatePostsTable extends Migration
             $table->increments('artikel_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('thumbnail',255);
-            $table->longtext('judul');
+            $table->text('judul');
+            $table->longtext('deskripsi');
             $table->string('penulis',45);
             $table->date('date');
             $table->timestamps();

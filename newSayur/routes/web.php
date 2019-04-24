@@ -38,6 +38,11 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/user/hapus/{id}','adminController@hapus')->middleware('admin');
     
     Route::post('/user/editt','adminController@edit')->middleware('admin');
+
+    // Artikel
+    Route::get('/artikel','adminController@pageArtikel')->middleware('admin');
+
+    Route::post('/artikel/insert','adminController@insertArtikel')->middleware('admin');
 });
 // Pedagang
 
