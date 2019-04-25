@@ -14,7 +14,10 @@
 								<div class="banner-content">
 								
 									<h1 class="text-white text-uppercase mb-10">Susah mencari Tukang Sayur ?<br></h1>
+									@guest
 									<p class="text-white mb-30">Anda dapat mencarinya disini, mempermudah pencarian Tukang Sayur di daerah rumah anda, cukup tekan tombol dibawah ini</p>
+									@guest
+										if(Auth::user()->akses == NULL && Auth::user()->akses == 2)
 									<a href="{{ url('/maps') }}" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Mulai Mencari</span><span class="lnr lnr-arrow-right"></span></a>
 								</div>
 							</div>

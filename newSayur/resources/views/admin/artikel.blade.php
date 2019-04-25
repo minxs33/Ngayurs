@@ -39,7 +39,7 @@
         
         <div class="container">
 
-<form action="{{url('admin/artikel/insert')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('admin/artikel/insert')}}" enctype="multipart/form-data">
     @csrf
     <div class="col-xs-4">
     	<div class="form-group">
