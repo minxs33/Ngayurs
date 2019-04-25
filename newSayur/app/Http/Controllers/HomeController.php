@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use DB;
+use App\Artikel;
 use App\User;
 use App\Pedagang;
 use Illuminate\Http\Request;
@@ -27,7 +28,11 @@ class HomeController extends Controller
     public function index()
     {
         $User = User::find(Auth::user()->id)->pedagang;
-        return view('/home',compact($User));
+        $article = Artikel::All();
+        return view('/home',[
+            'article' => $article,
+            'User' => $user
+        ]);
     }
     public function pedagang()
     {
