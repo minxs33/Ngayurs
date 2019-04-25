@@ -28,10 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $User = User::find(Auth::user()->id)->pedagang;
-        $article = Posts::All();
+        $posts = Posts::All();
         return view('/home',[
-            'article' => $article,
-            'User' => $User
+            'posts' => $posts
         ]);
     }
     public function pedagang()

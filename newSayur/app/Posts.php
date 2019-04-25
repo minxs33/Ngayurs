@@ -10,8 +10,5 @@ class Posts extends Model
         'user_id','thumbnail','judul','deskripsi','penulis',
     ];
     protected $table = 'posts';
-    public function User() {
-        return $this -> belongsTo('App\User');
-    }
     protected $primaryKey = 'artikel_id';
 }
