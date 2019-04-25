@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use Input;
+use App\Posts;
 use App\User;
 use App\Pedagang;
 use Illuminate\Http\Request;
@@ -91,7 +92,7 @@ class adminController extends Controller
     {
         return view('admin/artikel');
     }
-    public function insertArtikel(request $request)
+    public function insertArtikel(Request $request)
     {
             $this->validate($request, [
     
@@ -102,8 +103,9 @@ class adminController extends Controller
                 
             ]);
 
-            $insert = new Artikel;
-            $insert->user_id = Auth()->user()->id;
+            $insert = new Posts;
+
+            if($insert->user_id = Auth()->user()->id){
             if($request->hasfile('thumbnail')){
 
                 $thumbnail = $request->thumbnail;
@@ -116,10 +118,12 @@ class adminController extends Controller
             $insert->judul = $request->judul;
             $insert->deskripsi = $request->deskripsi;
             $insert->penulis = $request->penulis;
-            $insert->date = insertArtikel::now()->format('l, d F Y H:i');
             $insert->save();
 
-            return redirect('/admin/artikel')->with('success','Artikel Terkirim');
+            return redirect('/admin')->with('success','Artikel Terkirim');           
+        }else{
+            return var_dump($insert);
+        }
     }
 }
 

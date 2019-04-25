@@ -42,8 +42,8 @@ Route::group(['prefix' => 'admin'], function() {
     // Artikel
     Route::get('/artikel','adminController@pageArtikel')->middleware('admin');
 
-    Route::post('/artikel/insert','adminController@insertArtikel')->middleware('admin');
 });
+Route::post('/artikel/insert','adminController@insertArtikel');
 // Pedagang
 
 Route::get('/daftarpedagang','HomeController@pedagang');

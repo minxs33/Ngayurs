@@ -22,7 +22,6 @@ class CreatePostsTable extends Migration
             $table->text('judul');
             $table->longtext('deskripsi');
             $table->string('penulis',45);
-            $table->date('date');
             $table->timestamps();
         });
     }

@@ -46,7 +46,6 @@
 		</div>
 		<section class="remarkable-area" id="Feature">
 			<div class="row justify-content-center wow bounceInUp" data-wow-duration="2s">
-			
 			</section>
 		<div class="main-wrapper animated">
 			<!-- Start Feature Area -->
