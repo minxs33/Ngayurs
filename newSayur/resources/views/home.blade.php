@@ -15,10 +15,12 @@
 								
 									<h1 class="text-white text-uppercase mb-10">Susah mencari Tukang Sayur ?<br></h1>
 									@guest
-									<p class="text-white mb-30">Anda dapat mencarinya disini, mempermudah pencarian Tukang Sayur di daerah rumah anda, cukup tekan tombol dibawah ini</p>
-									@guest
-										if(Auth::user()->akses == NULL && Auth::user()->akses == 2)
-									<a href="{{ url('/maps') }}" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Mulai Mencari</span><span class="lnr lnr-arrow-right"></span></a>
+									<p class="text-white mb-30">Dengan website ini, kamu dapat mencari tukang sayur terdekat! Untuk bisa mengakses kamu harus bergabung dengan cara Register Akun.</p>
+									<a href="{{ route('register') }}" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Register</span><i class="fas fa-user-plus"></i></a>
+										@else
+									<p class="text-white mb-30"><b class="text-white">{{auth()->user()->name}}</b> dengan ini kamu berhak menggunakan layanan ini. Tekan jelajahi untuk memulai</p>
+									<a href="{{ url('/maps') }}" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Jelajahi</span><i class="user-plus"></i></a>
+								@endguest
 								</div>
 							</div>
 						</div>
@@ -73,6 +75,57 @@
 			</section>
 			<!-- End Feature Area -->
 			<!-- Start Remarkable Wroks Area -->
+			<section class="remarkable-area" id="Feature">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+							<div class="section-title text-center">
+								<h2>Tata cara penggunaan</h2>
+								<p>Berikut 3 langkah untuk menggunakan web Ngayurs</p>
+							</div>
+						</div>
+					</div>
+					<div class="single-remark">
+						<div class="row no-gutters">
+							<div class="col-lg-7 col-md-6">
+								<div class="remark-thumb" style="background: url(img/1.png);"></div>
+							</div>
+							<div class="col-lg-5 col-md-6">
+								<div class="remark-desc">
+									<h4>Langkah Pertama</h4>
+									<p>Klik tombol bseperti gambar disamping untuk ke halaman maps dari web Ngayurs</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="single-remark">
+						<div class="row no-gutters">
+							<div class="col-lg-7 col-md-6">
+								<div class="remark-desc">
+									<h4>Langah Kedua</h4>
+									<p>Setelah anda menekan tombol tadi anda akan dibawa ke halaman baru seperti gambar disamping, anda juga dapat melihat data banyaknya Tukang Sayur dibagian kiri, dan anda juga dapat mencari Tukang Sayur di daerah lainnya dengan mengetik daerah yang ingin dilihat di kolom search</p>
+								</div>
+							</div>
+							<div class="col-lg-5 col-md-6">
+								<div class="remark-thumb" style="background: url(img/2.png);"></div>
+							</div>
+						</div>
+					</div>
+					<div class="single-remark">
+						<div class="row no-gutters">
+							<div class="col-lg-7 col-md-6">
+								<div class="remark-thumb" style="background: url(img/3.png);"></div>
+							</div>
+							<div class="col-lg-5 col-md-6">
+								<div class="remark-desc">
+									<h4>Langkah Ketiga</h4>
+									<p>Untuk mengetahui Tukang Sayur di daerah anda sekarang ini cukup menekan tombol di pojok kanan atas seperti gambar berikut</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="remarkable-area" id="Feature">
 				<div class="container">
 					<div class="row justify-content-center">
