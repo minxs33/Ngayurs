@@ -46,20 +46,7 @@
 		</div>
 		<section class="remarkable-area" id="Feature">
 			<div class="row justify-content-center wow bounceInUp" data-wow-duration="2s">
-			<div class="container">
-			<div class="card" style="width: 18rem;">
-			@foreach($article as $article)
-				<img class="card-img-top" src="" alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">{{$artikel->judul}}</h5>
-					<p class="card-text">{{ str_limit(strip_tags($artikel->deskripsi), 50) }}
-            		@if (strlen(strip_tags($artikel->deskripsi)) > 50)
-              		... <a href="/artikel/show/{{$artikel->artikel_id}}" class="btn btn-info btn-sm">Read More</a></p>
-					@endif
-				</div>
-			@endforeach
 			
-			</div>
 			</section>
 		<div class="main-wrapper animated">
 			<!-- Start Feature Area -->
@@ -160,15 +147,15 @@
 			<!-- End Remarkable Wroks Area -->
 			<!-- Start Story Area -->
 			<section class="story-area" id="gettingstarted">
-				<div class="container wow bounceInUp" data-wow-duration="2s">
-					<div class="row align-items-center">
+				<div class="container">
+					<div class="row align-items-center	">
 						<div class="col-lg-1">
 						</div>
 						<div class="col-lg-7">
 							<div class="story-box">
-								<h6 class="text-uppercase">Ingin bergabung sebagai Tukang Sayur Kami ?</h6>
-								<p>Daftar sekarang juga ! tidak dipungut biaya pendaftaran, isi data diri anda, dan tunggu konfirmasi dari kami melalui email</p>
-								<a href="/daftarpedagang" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Daftar di sini!</span><span class="lnr lnr-arrow-right"></span></a>
+								<h6 class="text-uppercase wow bounceInUp" data-wow-duration="2s">Ingin bergabung sebagai Tukang Sayur Kami ?</h6>
+								<p class=" wow bounceInUp" data-wow-duration="3s">Daftar sekarang juga ! tidak dipungut biaya pendaftaran, isi data diri anda, dan tunggu konfirmasi dari kami melalui email</p>
+								<a href="/daftarpedagang" class="primary-btn d-inline-flex align-items-center wow infinite bounce slower"><span class="mr-10 ">Daftar di sini!</span><span class="lnr lnr-arrow-right"></span></a>
 							</div>
 						</div>
 					</div>

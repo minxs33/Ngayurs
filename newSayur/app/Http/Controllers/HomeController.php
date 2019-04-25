@@ -28,10 +28,10 @@ class HomeController extends Controller
     public function index()
     {
         $User = User::find(Auth::user()->id)->pedagang;
-        $article = Artikel::All();
+        $article = Artikel::all();
         return view('/home',[
             'article' => $article,
-            'User' => $user
+            'User' => $User
         ]);
     }
     public function pedagang()
