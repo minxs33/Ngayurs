@@ -180,6 +180,7 @@ section.content p
 			</div>
 			<ul>
 			<li><a href="/">Home</a></li>
+			<li><a href="/artikel">Artikel</a></li>
 					@guest
                     	        <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             @if (Route::has('register'))

@@ -32,6 +32,13 @@ class HomeController extends Controller
             'posts' => $posts
         ]);
     }
+    public function artikel()
+    {
+        $posts = Posts::orderBy('updated_at','desc')->limit(5)->get();
+        return view('artikel',[
+            'posts' => $posts
+        ]);
+    }
     public function pedagang()
     {
         if(Auth()->user()->akses == 2){
