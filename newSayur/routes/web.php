@@ -1,5 +1,5 @@
 <?php
-
+use App\posts;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +14,12 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/artikel','homeController@artikel');
+Route::get('/artikel',function(){
+    $posts = Posts::orderBy('updated_at','desc')->limit(5)->get();
+    return view('artikel',[
+        'posts' => $posts
+    ]);
+});
 
 Auth::routes();
 // User

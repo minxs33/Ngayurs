@@ -176,7 +176,9 @@ section.content p
 </style>
 <nav>
 			<div class="logo">
+			<a href="/">
 				<img src="img/Logo Nyayurs 2.png">
+			</a>
 			</div>
 			<ul>
 			<li><a href="/">Home</a></li>
@@ -205,5 +207,3 @@ section.content p
 			</ul>
 		</nav>
                 @yield('content')
-</body>
-</html>

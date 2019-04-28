@@ -133,11 +133,15 @@ section.content p
 </style>
 <nav>
 			<div class="logo">
+			<a href="/">
 				<img src="img/Logo Nyayurs 2.png">
+			</a>
 			</div>
 			<ul>
-			@guest
-                                <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/artikel">Artikel</a></li>
+					@guest
+                    	        <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             @if (Route::has('register'))
                                 <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
                             @endif
