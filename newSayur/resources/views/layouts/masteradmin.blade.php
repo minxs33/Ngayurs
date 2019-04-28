@@ -97,8 +97,8 @@
     <section class="sidebar">
   <ul class="sidebar-menu tree">
   <li>
-    <a href="{{url('admin/')}}">
-            <i class="fa fa-users"></i> <span>Data Pedagang</span>
+    <a href="{{url('admin')}}">
+            <i class="fa fa-user"></i> <span>Data Pedagang</span>
     </a>
   </li>
   <li>
@@ -111,11 +111,19 @@
             <i class="fa fa-envelope-o"></i> <span>Laporan</span>
     </a>
   </li>
-  <li>
-    <a href="{{url('admin/artikel')}}">
-            <i class="fa fa-envelope-o"></i> <span>Artikel</span>
-    </a>
-  </li>
+  <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Artikel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="{{ url('admin/artikel') }}"><i class="fa fa-circle-o"></i> Buat Artikel</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> List Artikel</a></li>
+          </ul>
+    </li>
   </ul>
     </section>  
     <!-- /.sidebar -->
