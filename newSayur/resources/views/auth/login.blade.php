@@ -9,7 +9,7 @@
 <br>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-7">
             <div class="card shadow mb-5 bg-white rounded">
                 <div class="card-header">{{ __('Login') }}</div>
 
@@ -17,7 +17,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row wow fadeIn" data-wow-duration="2s">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Email') }}</label>
 
                             <div class="col-md-6">
