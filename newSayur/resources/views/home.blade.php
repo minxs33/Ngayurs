@@ -48,7 +48,7 @@
 			<div class="row justify-content-center wow bounceInUp" data-wow-duration="2s">
 			
 		</section>
-		<div class="main-wrapper animated">
+		<div class="main-wrapper wow fadeIn">
 			<!-- Start Feature Area -->
 			<section class="featured-area" id="keunggulan">
 				<div class="container">
