@@ -11,4 +11,7 @@ class Artikel extends Model
         return $this -> belongsTo('App\User');
     }
     protected $primaryKey = 'artikel_id';
+    protected $fillable = [
+        'user_id','artikel_id','thumbnail','judul','deskripsi','penulis',
+    ];
 }

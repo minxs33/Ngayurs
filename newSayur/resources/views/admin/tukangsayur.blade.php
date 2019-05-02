@@ -15,7 +15,7 @@
                               <li class="breadcrumb-item"><h4><b>Daftar konfirmasi pedagang</b></h4></li>
                             </ol>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table data">
                                         <thead>
                                             <tr>
                                                 <th>ID User</th>
@@ -66,7 +66,7 @@
                                 </div>
                               </div>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table pedagang">
                                         <thead>
                                             <tr>
                                                 <th>ID Pedagang</th>
@@ -184,8 +184,16 @@
                         map.getCanvas().style.cursor = '';
                       });
                     });
-                        </script>
-                    </div>
+
+$(document).ready( function () {
+    $('.data').DataTable();
+  } 
+);
+$('.pedagang').DataTable();
+  } 
+);
+            </script>
+          </div>
       </div>
     </section
 @endsection

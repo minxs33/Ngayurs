@@ -62,9 +62,9 @@ class pedagangController extends Controller
         $insert1->status = 'offline';
         $insert1->save();
 
-        return redirect('/home')->with('error','Permintaan kamu sedang di proses');
+        return redirect('/home')->with('success','Permintaan kamu sedang di proses');
     }elseif(Auth()->user()->akses == 'menunggu'){ 
-        return redirect('/home')->with('error','Permintaan kamu sedang di proses');
+        return redirect('/home')->with('success','Permintaan kamu sedang di proses');
     }else{
     return redirect('/home')->with('error','Kamu sudah punya akun');
     }
@@ -72,12 +72,16 @@ class pedagangController extends Controller
 
     public function maps()
     {
+        if(Auth()->user()->akses == '2'){
         $pedagang = DB::table('users')
         ->join('pedagangs','pedagangs.user_id','=','id')
         ->where('users.id', Auth()->user()->id)->first();
         return view('pedagang/mapspedagang',[
             'pedagang' => $pedagang
         ]);
+        }else{
+            return view('home')->with('success','Data sedang di proses');
+        }
     }
     public function edit(request $request)
     {

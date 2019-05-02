@@ -125,5 +125,12 @@ class adminController extends Controller
             return var_dump($insert);
         }
     }
+    public function listartikel()
+    {
+        $posts = Posts::paginate(5);
+        return view('admin/listartikel',[
+            'posts' => $posts
+        ]);
+    }
 }
 
