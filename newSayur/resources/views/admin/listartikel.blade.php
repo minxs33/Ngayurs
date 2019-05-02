@@ -4,7 +4,7 @@
 <section class="content">
     <div class="box">
     <div class="col-md-5 col-8 align-self-center">
-         <h3 class="text-themecolor m-b-0 m-t-0">Data Pedagang</h3>
+         <h3 class="text-themecolor m-b-0 m-t-0">Data Artikel</h3>
     </div>
     <div class="box-body">
               <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
@@ -12,7 +12,7 @@
                         <div class="card">
                             <div class="card-body">
                             <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><h4><b>Daftar konfirmasi pedagang</b></h4></li>
+                              <li class="breadcrumb-item"><h4><b>Daftar Artikel</b></h4></li>
                             </ol>
                                 <div class="table-responsive">
                                     <table class="table data">
