@@ -9,7 +9,7 @@
 <br>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-7">
             <div class="card shadow mb-5 bg-white rounded">
                 <div class="card-header">{{ __('Login') }}</div>
 

@@ -19,7 +19,8 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/adminlte/css/skins/_all-skins.min.css">
-
+  <link rel="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -97,8 +98,8 @@
     <section class="sidebar">
   <ul class="sidebar-menu tree">
   <li>
-    <a href="{{url('admin/')}}">
-            <i class="fa fa-users"></i> <span>Data Pedagang</span>
+    <a href="{{url('admin')}}">
+            <i class="fa fa-user"></i> <span>Data Pedagang</span>
     </a>
   </li>
   <li>
@@ -106,16 +107,19 @@
             <i class="fa fa-user"></i> <span>Data User</span>
     </a>
   </li>
-  <li>
-    <a href="{{url('admin/laporan')}}">
-            <i class="fa fa-envelope-o"></i> <span>Laporan</span>
-    </a>
-  </li>
-  <li>
-    <a href="{{url('admin/artikel')}}">
-            <i class="fa fa-envelope-o"></i> <span>Artikel</span>
-    </a>
-  </li>
+  <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Artikel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="{{ url('admin/artikel') }}"><i class="fa fa-circle-o"></i> Buat Artikel</a></li>
+            <li><a href="{{ url('admin/listartikel')}}"><i class="fa fa-circle-o"></i> List Artikel</a></li>
+          </ul>
+    </li>
   </ul>
     </section>  
     <!-- /.sidebar -->

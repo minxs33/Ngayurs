@@ -1,5 +1,5 @@
 <?php
-
+use App\posts;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,21 @@
 
 Route::get('/', function () {
     return view('home');
+});
+
+Route::get('/artikel',function(){
+    $posts = Posts::orderBy('updated_at','desc')->paginate(6);
+    return view('artikel',[
+        'posts' => $posts
+    ]);
+});
+
+Route::get('/readartikel/{id}', function($id){
+    $posts = posts::where('artikel_id',$id)->first();
+
+        return view('readartikel',[
+            'posts' => $posts
+    ]);
 });
 
 Auth::routes();
@@ -42,6 +57,7 @@ Route::group(['prefix' => 'admin'], function() {
     // Artikel
     Route::get('/artikel','adminController@pageArtikel')->middleware('admin');
 
+    Route::get('/listartikel','adminController@listArtikel')->middleware('admin');
 });
 Route::post('/artikel/insert','adminController@insertArtikel');
 // Pedagang
@@ -58,3 +74,4 @@ Route::get('/pedagang/offline/{id}','pedagangController@offline');
 Route::post('/editdeskripsi','pedagangController@edit');
 
 Route::post ('/insertPedagang','PedagangController@insert');
+

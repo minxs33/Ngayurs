@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/fav.png">
+	<link rel="shortcut icon" href="/img/fav.png">
 	<!-- Author Meta -->
 	<meta name="author" content="CodePixar">
 	<!-- Meta Description -->
@@ -176,10 +176,13 @@ section.content p
 </style>
 <nav>
 			<div class="logo">
+			<a href="/">
 				<img src="img/Logo Nyayurs 2.png">
+			</a>
 			</div>
 			<ul>
 			<li><a href="/">Home</a></li>
+			<li><a href="/artikel">Artikel</a></li>
 					@guest
                     	        <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             @if (Route::has('register'))
@@ -204,5 +207,3 @@ section.content p
 			</ul>
 		</nav>
                 @yield('content')
-</body>
-</html>

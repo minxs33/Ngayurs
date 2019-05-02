@@ -1,30 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
-    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-	<!-- Maps -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
-      <!-- Mapbox GL JS -->
-      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
-      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet'>
-      <!-- Geocoder plugin -->
-      <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.js'></script>
-      <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css' type='text/css' />
-      <!-- Turf.js plugin -->
-      <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-      <!-- file aku -->
-      <link rel='stylesheet' href='css/style.css' type='text/css'>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="../img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+
 	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
+	
+		<!--
+		CSS
+		============================================= -->
+		<link rel="stylesheet" href="../css/linearicons.css">
+		<link rel="stylesheet" href="../css/owl.carousel.css">
+		<link rel="stylesheet" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" href="../css/nice-select.css">
+		<link rel="stylesheet" href="../css/magnific-popup.css">
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link rel="stylesheet" href="../css/main.css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title')</title>
+
+
+    <!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+	</script>
+	<script>
+	new WOW().init();
+	</script>
+	<script src="{{ asset('../js/app.js') }}" defer></script>
+    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="../js/vendor/bootstrap.min.js"></script>
+	<script src="../js/jquery.ajaxchimp.min.js"></script>
+	<script src="../js/owl.carousel.min.js"></script>
+	<script src="../js/jquery.nice-select.min.js"></script>
+	<script src="../js/jquery.magnific-popup.min.js"></script>
+	<script src="../js/main.js"></script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+	<link href="{{ asset('../css/navbar.css') }}" rel="stylesheet">
+	<script
+			  src="http://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(window).on('scroll', function(){
+				if($(window).scrollTop()){
+					$('nav').addClass('black');
+				}
+				else
+				{
+					$('nav').removeClass('black');
+				}
+			})
+		</script>
 </head>
 <body>
 <style>
@@ -134,11 +176,11 @@ section.content p
 <nav>
 			<div class="logo">
 			<a href="/">
-				<img src="img/Logo Nyayurs 2.png">
+				<img src="../img/Logo Nyayurs 2.png">
 			</a>
 			</div>
 			<ul>
-			<li><a href="/home">Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li><a href="/artikel">Artikel</a></li>
 					@guest
                     	        <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -163,6 +205,4 @@ section.content p
                         @endguest
 			</ul>
 		</nav>
-    @yield('content')
-</body>
-</html>
+                @yield('content')
