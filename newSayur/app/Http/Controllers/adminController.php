@@ -63,24 +63,33 @@ class adminController extends Controller
     }
     public function getedit($id)
     {
-        $user = user::where('id',$id)->first();
+        $posts = posts::where('artikel_id',$id)->first();
         return view('admin/editpage',[
-            'user' => $user
+            'posts' => $posts
         ]);
     }
     public function edit(Request $request)
     {
-        $user = User::where('id', $request->id)->first();
-        
-		$name	= $request->name;
-		$email	= $request->email;
+        $posts = Posts::where('Artikel_id', $request->id)->first();
 
-		$user->name = $name;
-		$user->email  = $email;
-        $user->save();
+		$posts->thumbnail = $request->thumbnail;
+        $posts->judul  = $request->judul;
+        $posts->deskripsi = $request->deskripsi;
+        $posts->penulis = $request->penulis;
+
+        $posts->save();
         
-        return redirect('admin/user');
+        return redirect('admin/listartikel');
     }
+    
+    public function hapusartikel($id)
+    {
+        $posts = posts::where('artikel_id',$id);
+        $posts->delete();
+
+        return redirect('admin/listartikel');
+    }
+
     public function hapus($id)
     {
         $user = user::where('id',$id);

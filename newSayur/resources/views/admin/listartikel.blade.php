@@ -30,15 +30,15 @@
                                                 @foreach($posts as $posts)
                                                 <tr>
                                                 <td>{{$posts->artikel_id}}</td>
-                                                <td><img src="{{URL::asset('/fotoThumbnail/'.$posts->thumbnail) }}" style="width:75px; height:75px;"></td>
+                                                <td><img src="{{URL::asset('/fotoThumbnail/'.$posts->thumbnail) }}" value="{{$posts->thumbnail}}" style="width:75px; height:75px;"></td>
                                                 <td>{{$posts->judul}}</td>
                                                 <td>@if (strlen(strip_tags($posts->deskripsi)) > 50)
                                                     <p>{{ str_limit(strip_tags($posts->deskripsi), 50) }}</p></td>
                                                     @endif
                                                 <td>{{$posts->penulis}}</td>
                                                 <td>{{$posts->created_at->format('Y-m-d')}}
-                                                <td><a class="btn btn-primary" href="admin/terima/{{$posts->id}}">Edit</a>
-                                                    <a class="btn btn-danger" href="admin/tolak/{{$posts->id}}">Delete</a>
+                                                <td><a class="btn btn-primary" href="/admin/edit/{{$posts->artikel_id}}">Edit</a>
+                                                    <a class="btn btn-danger" href="/admin/hapus/{{$posts->artikel_id}}">Delete</a>
                                                 </td>
                                                 @endforeach
                                         </tbody>

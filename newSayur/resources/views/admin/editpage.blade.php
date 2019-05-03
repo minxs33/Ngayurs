@@ -12,16 +12,24 @@
 <div class="col-lg-12">
 <div class="card col-lg-6">
 <div class="card-body">
-<form method="POST" action="{{url('admin/user/editt')}}">
-<input type="hidden" name="id" value="{{ $user->id }}">
+<form method="POST" action="{{url('admin/artikel/edit')}}">
+<input type="hidden" name="id" value="{{ $posts->artikel_id }}">
 {{ csrf_field() }}
   <div class="form-group">
-    <label for="pwd">Username:</label>
-    <input type="text" name="name" class="form-control" value=" {{ $user->name }} ">
+    <label for="pwd">Thumbnail :</label>
+    <input type="file" name="thumbnail" class="form-control-file">
   </div>
   <div class="form-group">
     <label for="email">Email address:</label>
-    <input type="email" name="email" class="form-control" value=" {{ $user->email }} ">
+    <input type="text" name="judul" class="form-control" value=" {{ $posts->judul }} ">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <textarea type="text" name="deskripsi" class="form-control" value=" {{ $posts->deskripsi }} "></textarea>
+  </div>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="text" name="penulis" class="form-control" value=" {{ $posts->penulis }} ">
   </div>
   </div>
   </div>

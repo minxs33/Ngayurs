@@ -49,7 +49,6 @@
 			
 		</section>
 		<div class="main-wrapper wow fadeIn">
-			<!-- Start Feature Area -->
 			<section class="featured-area" id="keunggulan">
 				<div class="container">
 					<div class="row justify-content-center">
@@ -144,8 +143,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- End Remarkable Wroks Area -->
-			<!-- Start Story Area -->
 			<section class="story-area" id="gettingstarted">
 				<div class="container">
 					<div class="row align-items-center	">
@@ -161,12 +158,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- End Story Area -->
-
-
-			<!-- Start Contact Form -->
-			<!-- End Contact Form -->
-			<!-- Start Footer Widget Area -->
 			<section class="footer-widget-area"> 	
 				<div class="container wow bounceInUp" data-wow-duration="2s">
 					<div class="row">
@@ -219,8 +210,6 @@
 					</div>
 				</footer>
 			</section>
-			<!-- End Footer Widget Area -->
-
 		</div>
 
 		</div>

@@ -49,18 +49,22 @@ Route::group(['prefix' => 'admin'], function() {
     // Data User
     Route::get('/user','adminController@user')->middleware('admin');
     
-    Route::get('/user/edit/{id}','adminController@getedit')->middleware('admin');
+    
     Route::get('/user/hapus/{id}','adminController@hapus')->middleware('admin');
     
-    Route::post('/user/editt','adminController@edit')->middleware('admin');
+    Route::get('/artikel/edit','adminController@edit')->middleware('admin');
 
     // Artikel
+    Route::get('/hapus/{id}','adminController@hapusartikel')->middleware('admin');
+
     Route::get('/artikel','adminController@pageArtikel')->middleware('admin');
 
     Route::get('/listartikel','adminController@listArtikel')->middleware('admin');
 });
 Route::post('/artikel/insert','adminController@insertArtikel');
 // Pedagang
+
+Route::get('admin/edit/{id}','adminController@getedit')->middleware('admin');  
 
 Route::get('/daftarpedagang','HomeController@pedagang');
 
