@@ -47,7 +47,7 @@
                         </div>
                         </div>
                         <div class="form-group">
-                        <label for="exampleFormControlFile1">Garis Lintang</label>  <a class="text-primary" href="https://www.google.com/maps">Cari disini</a>
+                        <label for="exampleFormControlFile1">Garis Lintang</label>
                         <input class="form-control" id="lintang" type="text" name="lat">
                         </div>
                         <div class="form-group">
@@ -74,7 +74,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWlueHMzMyIsImEiOiJjanQ1NHk3dG8wMGRpNGFxZmthc
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-74.50, 40],
+    center: [106.838497, -6.362165],
     zoom: 9
 });
 
@@ -82,6 +82,35 @@ map.on('click', function (e) {
     document.getElementById('lintang').value = JSON.stringify(e.lngLat.lng);
     document.getElementById('bujur').value = JSON.stringify(e.lngLat.lat);
     map.setPaintProperty('point', 'circle-color', '#3887be');
+});
+map.on('load', function (e) {
+  
+  geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      bbox: [95.2930261576, -10.3599874813, 141.03385176, 5.47982086834]
+  });
+
+  map.addControl(geocoder, 'top-right');
+
+  map.addSource('single-point', {
+    "type": "geojson",
+    "data": {
+      "type": "FeatureCollection",
+      "features": []
+    }
+  });
+
+  map.addLayer({
+    "id": "point",
+    "source": "single-point",
+    "type": "circle",
+    "paint": {
+      "circle-radius": 10,
+      "circle-color": "#007cbf",
+      "circle-stroke-width": 3,
+      "circle-stroke-color": "#fff"
+    }
+  });
 });
 </script>
 

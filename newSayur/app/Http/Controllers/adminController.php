@@ -72,7 +72,14 @@ class adminController extends Controller
     {
         $posts = Posts::where('Artikel_id', $request->id)->first();
 
-		$posts->thumbnail = $request->thumbnail;
+        if($request->hasfile('thumbnail')){
+
+            $thumbnail = $request->thumbnail;
+            $filename = time() . '.' . $thumbnail->getClientOriginalExtension();
+            request()->thumbnail->move(public_path('fotoThumbnail'), $filename);
+            $posts->thumbnail = $filename;
+        }
+
         $posts->judul  = $request->judul;
         $posts->deskripsi = $request->deskripsi;
         $posts->penulis = $request->penulis;
@@ -129,7 +136,7 @@ class adminController extends Controller
             $insert->penulis = $request->penulis;
             $insert->save();
 
-            return redirect('/admin')->with('success','Artikel Terkirim');           
+            return redirect('/admin/listartikel')->with('success','Artikel Terkirim');           
         }else{
             return var_dump($insert);
         }

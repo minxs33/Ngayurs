@@ -6,6 +6,14 @@
     <div class="col-md-5 col-8 align-self-center">
          <h3 class="text-themecolor m-b-0 m-t-0">Data Artikel</h3>
     </div>
+    @if(Session::has('success'))
+<div class="alert alert-success alert-dismissible fade show wow shake" role="alert">
+  <strong>{{ Session::get('success') }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
     <div class="box-body">
               <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
               <div class="col-lg-12">

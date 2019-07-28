@@ -96,7 +96,7 @@ nav.black ul li a
 nav ul li a.active,
 nav ul li a:hover
 {
-	color: #0442a5;
+	color: #000;
 	margin-top:1px;
 	transition:0.5s;
 }

@@ -76,7 +76,7 @@
             var map = new mapboxgl.Map({
               container: 'map',
               style: 'mapbox://styles/mapbox/streets-v11',
-          center: [106.838497, -6.362165],
+          center: [{{$pedagang->lon }}, {{$pedagang->lat}}],
           zoom: 16
 });
 var geojson = {
@@ -107,6 +107,34 @@ el.className = 'marker';
 new mapboxgl.Marker(el)
   .setLngLat(marker.geometry.coordinates)
   .addTo(map);
+});
+map.on('load', function (e) {
+    geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        bbox: [95.2930261576, -10.3599874813, 141.03385176, 5.47982086834]
+    });
+
+    map.addControl(geocoder, 'top-right');
+
+    map.addSource('single-point', {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": []
+      }
+    });
+
+    map.addLayer({
+      "id": "point",
+      "source": "single-point",
+      "type": "circle",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#007cbf",
+        "circle-stroke-width": 3,
+        "circle-stroke-color": "#fff"
+      }
+    });
 });
 
 </script>

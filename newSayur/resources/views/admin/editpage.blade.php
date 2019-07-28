@@ -24,18 +24,18 @@
     <input type="text" name="judul" class="form-control" value=" {{ $posts->judul }} ">
   </div>
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <textarea type="text" name="deskripsi" class="form-control" value=" {{ $posts->deskripsi }} "></textarea>
+    <label for="email">Deskripsi:</label>
+    <textarea type="text" name="deskripsi" class="form-control">{{$posts->deskripsi}}</textarea>
   </div>
   <div class="form-group">
-    <label for="email">Email address:</label>
+    <label for="email">Penulis:</label>
     <input type="text" name="penulis" class="form-control" value=" {{ $posts->penulis }} ">
   </div>
   </div>
+  <button type="submit" class="btn btn-success col-lg-12">Submit</button>
   </div>
   <div class="card col-lg-6">
   <div class="card-body">
-  <button type="submit" class="btn btn-success">Submit</button>
 </form> 
   </div>
   </div>

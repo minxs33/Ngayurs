@@ -52,7 +52,7 @@ Route::group(['prefix' => 'admin'], function() {
     
     Route::get('/user/hapus/{id}','adminController@hapus')->middleware('admin');
     
-    Route::get('/artikel/edit','adminController@edit')->middleware('admin');
+    Route::post('/artikel/edit','adminController@edit')->middleware('admin');
 
     // Artikel
     Route::get('/hapus/{id}','adminController@hapusartikel')->middleware('admin');

@@ -104,14 +104,14 @@
                               <li class="breadcrumb-item"><h4><b>Lokasi Pedagang Online</b></h4></li>
                             </ol>
                                 <div class="table-responsive">
-                        <div id='map' style='width: 400px; height: 300px; padding:10px;'></div>
+                        <div id='map' style='width: 100%; height: 300px; padding:10px;'></div>
                       <script>
                         mapboxgl.accessToken = 'pk.eyJ1IjoibWlueHMzMyIsImEiOiJjanQ1NHk3dG8wMGRpNGFxZmthc2VsYWlqIn0.3AuuM_viiq5tN45mzyQmzw';
                         var map = new mapboxgl.Map({
                           container: 'map',
                           style: 'mapbox://styles/mapbox/streets-v11',
                           center: [106.838497, -6.362165],
-                          zoom: 16
+                          zoom: 10
                         });
                       </script>
                             </div>
@@ -131,7 +131,7 @@
                     </style>
                         <script>
                        map.on('load', function(e) {
-
+                        
                         map.addLayer({
                             "id": "places",
                             "type": "symbol",
@@ -183,6 +183,33 @@
                         map.on('mouseleave', 'places', function () {
                         map.getCanvas().style.cursor = '';
                       });
+
+                      geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        bbox: [95.2930261576, -10.3599874813, 141.03385176, 5.47982086834]
+    });
+
+    map.addControl(geocoder, 'top-right');
+
+    map.addSource('single-point', {
+      "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+        "features": []
+      }
+    });
+
+    map.addLayer({
+      "id": "point",
+      "source": "single-point",
+      "type": "circle",
+      "paint": {
+        "circle-radius": 10,
+        "circle-color": "#007cbf",
+        "circle-stroke-width": 3,
+        "circle-stroke-color": "#fff"
+      }
+    });
                     });
 
 $(document).ready( function () {
